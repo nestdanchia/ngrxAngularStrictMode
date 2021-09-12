@@ -1,0 +1,11 @@
+<p>counter works!</p>
+<div class="flex-container">
+<div  class="flex-item" ><button (click)="increment()">Increment</button></div>
+
+<div  class="flex-item">Current Count: {{ count$ | async }}</div>
+
+<div  class="flex-item"><button (click)="decrement()">Decrement</button></div>
+
+
+<div  class="flex-item"><button (click)="reset()">Reset Counter</button></div>
+</div>
