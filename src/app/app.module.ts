@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { booksReducer } from './book/state/books.reducer';
 //import { counterReducer } from './redux/counter.reducer';
+// https://github.com/nestdanchia/ngrxAngularStrictMode
 import { collectionReducer } from './book/state/collection.reducer';
 import { HttpClientModule } from '@angular/common/http';
 @NgModule({
