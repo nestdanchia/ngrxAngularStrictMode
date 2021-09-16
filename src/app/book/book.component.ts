@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { GoogleBooksService } from './service/books.service';
-import { addBook, removeBook } from './state/books.actions';
+import { addBook, removeBook, retrievedBookList } from './state/books.actions';
 import { selectBookCollection, selectBooks } from './state/books.selectors';
 import { Observable } from 'rxjs';
 import { Book } from './model/books.model';
@@ -13,7 +13,7 @@ import { Book } from './model/books.model';
 })
 export class BookComponent implements OnInit {
 
-  books$:Observable<Book[]> = this.store.pipe(select(selectBooks));
+  books$= this.store.pipe(select(selectBooks));
   bookCollection$ = this.store.pipe(select(selectBookCollection));
  
   onAdd(bookId: any) {
@@ -36,4 +36,4 @@ export class BookComponent implements OnInit {
   }
   }
 
-}
+
