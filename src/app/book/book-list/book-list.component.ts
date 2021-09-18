@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Book } from '../model/books.model';
+//import { Book } from '../model/books.model';
+import { Book } from './../model/books.model';
 
 @Component({
   selector: 'app-book-list',
@@ -7,13 +8,19 @@ import { Book } from '../model/books.model';
   styleUrls: ['./book-list.component.scss']
 })
 export class BookListComponent implements OnInit {
+  //books =[{id:'',volumeInfo:{title:'',authors:[]}}]
   @Input()
-  books: Array<Book> = [];
+  books!: Array<Book>| null |undefined
+  //books =[{id:'',volumeInfo:{title:'',authors:[]}}]
+    
   @Output() add = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+ addi(data:Book){
+   console.log('data.id',data.id)
+this.add.emit(data.id)
+ }
 }

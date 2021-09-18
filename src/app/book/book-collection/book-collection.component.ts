@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Book } from '../model/books.model';
+//import { Book } from './../model/books.model';
 
 @Component({
   selector: 'app-book-collection',
@@ -8,11 +9,19 @@ import { Book } from '../model/books.model';
 })
 export class BookCollectionComponent implements OnInit {
   @Input()
-  books: Array<Book> = [];
+  books!:Book[]
+  // Array<Book>
   @Output() remove = new EventEmitter();
-  constructor() { }
+  constructor() { 
+    
+    
+  }
 
   ngOnInit(): void {
+  }
+  removi(data:Book){
+    console.log('BookCollectionComponent book id remove:',data.id)
+    this.remove.emit(data.id)
   }
 
 }

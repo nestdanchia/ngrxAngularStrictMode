@@ -7,6 +7,6 @@ export interface AppState {
   */
   export interface AppState {
    
-    books: Book[]  ;
-    collection: string[]  ;
+    books: Book[];
+    collection:  string[];
   }

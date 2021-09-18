@@ -1,7 +1,17 @@
-<p>book works!</p>
-<h2>Books</h2>
-<app-book-list class="book-list" [books]="books$ | async" (add)="onAdd($event)"></app-book-list>
+
+
+<!--    book.component.html error 
+    ahora da este unico error luego de modificar el
+    store.d.ts  class Store<T = any> en <app-book-collection ></app-book-collection>
+Type 'Book | undefined' is not assignable to type 'Book'.
+    Type 'undefined' is not assignable to type 'Book'.
+-->
 
 <h2>My Collection</h2>
-<app-book-collection class="book-collection" [books]="bookCollection$ | async" (remove)="onRemove($event)">
+<app-book-collection [books]="books" (remove)="onRemove($event)">
+    app-book-collection
 </app-book-collection>
+
+<p>book works!</p>
+<h2>Books</h2>
+<app-book-list [books]="books$ | async" (add)="onAdd($event)"></app-book-list>
