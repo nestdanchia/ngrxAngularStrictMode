@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
 
+## Walkthrough tutorial de la pagina de ngrx 
+https://ngrx.io/guide/store/walkthrough
+Con Angular 12 en strict mode tuve que modificar 
+ class Store<T = any> extends Observable<T> en store.d.ts
+ ademas de declarar los tipos en otra forma a la que lo hace 
+ el tutorial para que pudiera ejecutarse
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
