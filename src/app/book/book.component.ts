@@ -8,6 +8,7 @@ import { pipe} from 'rxjs';
 import { Book } from './model/books.model';
 import { collectionReducer } from './state/collection.reducer';
 import { map } from 'rxjs/operators';
+// https://github.com/nestdanchia/ngrxAngularStrictMode
 // error si no se modifica store.d.ts
 // declare class Store<T = any> extends Observable<T> implements Observer<Action> {..]
 // qe se  declara como class Store<T = Object> extends Observable<T> implements Observer<Action> {
