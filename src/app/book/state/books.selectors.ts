@@ -39,8 +39,8 @@ export const selectBookCollection = createSelector(
   selectBooks,
   selectCollectionState,
   (books: Book[], collection: string[] )=> {
-    return collection.map((id) => books.find((book) => { book.id === id && book.id !== undefined; console.log('book', book); }
-    ) as unknown as Book);
+    return collection.map((id) => books.find((book) =>  book.id === 'id' 
+    )  )as Book[];
   }
 );
 

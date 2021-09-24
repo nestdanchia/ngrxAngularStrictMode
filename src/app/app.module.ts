@@ -9,6 +9,7 @@ import { booksReducer } from './book/state/books.reducer';
 // https://github.com/nestdanchia/ngrxAngularStrictMode
 import { collectionReducer } from './book/state/collection.reducer';
 import { HttpClientModule } from '@angular/common/http';
+import { EffectsModule } from '@ngrx/effects';
 // null undefine null and undefined are only assignable to unknown, 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     //StoreModule.forRoot({ count: counterReducer })
     //StoreModule.forRoot({ books: booksReducer, collection: collectionReducer }),
     StoreModule.forRoot({ books: booksReducer, collection: collectionReducer }),
-     HttpClientModule ,
+     HttpClientModule,
+     EffectsModule.forRoot([]) ,
   ],
   providers: [],
   bootstrap: [AppComponent]

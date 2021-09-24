@@ -21,10 +21,12 @@ export class BookComponent implements OnInit {
 //books!:Book[]
 books$!: Observable<Book[]>
   bookCollection$:Observable<Book[]> | undefined
-  books!: Array<Book>
+  books!:Book[]
+  //Array<Book>
 
  
   onAdd(bookId: any) {
+    console.log('bokId desde book.component :',bookId)
     this.store.dispatch(addBook({ bookId }));
   }
  
@@ -36,27 +38,36 @@ books$!: Observable<Book[]>
     private booksService: GoogleBooksService,
     private store: Store
   ) {
-   
-    }
-  
+    this.books$ = this.store.pipe(select(selectBooks));
+    this.bookCollection$ = this.store.pipe(select(selectBookCollection));
+   /*1.
+    this.books$=this.booksService
+      .getBooks()
+      //.subscribe((Book) => this.store.dispatch(retrievedBookList({ Book })));
 
-  ngOnInit() {
-    this.colection()
+      this.books$.subscribe((Book) => this.store.dispatch(retrievedBookList({ Book })))
+   
     
+  */
+  }
+  ngOnInit() {
+    this.colection();
     this.booksService
       .getBooks()
       .subscribe((Book) => this.store.dispatch(retrievedBookList({ Book })));
+    
   }
+ 
   colection(){
-    this.books$= this.store.pipe(select(selectBooks));
-    console.log('this.books',this.books);
+    //this.books$= this.store.pipe(select(selectBooks));
+    //console.log('this.books',this.books);
  
       this.store.pipe(select(selectBookCollection)).subscribe(
        
          
         (data)=>{
           if(typeof data !=='undefined'){
-            this.books=data,console.log('this.books',data)
+            this.books=data,console.log('this.books desde book.component data:'+JSON.stringify( data))
           }
           
         })

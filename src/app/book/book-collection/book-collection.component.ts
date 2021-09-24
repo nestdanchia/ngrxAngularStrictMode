@@ -9,7 +9,7 @@ import { Book } from '../model/books.model';
 })
 export class BookCollectionComponent implements OnInit {
   @Input()
-  books!:Book[]
+  books!:Book[] |null
   // Array<Book>
   @Output() remove = new EventEmitter();
   constructor() { 
