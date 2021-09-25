@@ -10,6 +10,8 @@ import { booksReducer } from './book/state/books.reducer';
 import { collectionReducer } from './book/state/collection.reducer';
 import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 // null undefine null and undefined are only assignable to unknown, 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { EffectsModule } from '@ngrx/effects';
     //StoreModule.forRoot({ books: booksReducer, collection: collectionReducer }),
     StoreModule.forRoot({ books: booksReducer, collection: collectionReducer }),
      HttpClientModule,
-     EffectsModule.forRoot([]) ,
+     EffectsModule.forRoot([]),
+     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }) ,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -41,41 +41,32 @@ books$!: Observable<Book[]>
   ) {
     this.books$ = this.store.pipe(select(selectBooks));
     this.bookCollection$ = this.store.pipe(select(selectBookCollection));
-   /*1.
-    this.books$=this.booksService
-      .getBooks()
-      //.subscribe((Book) => this.store.dispatch(retrievedBookList({ Book })));
-
-      this.books$.subscribe((Book) => this.store.dispatch(retrievedBookList({ Book })))
-   
     
-  */
   }
   ngOnInit() {
     this.colection();
     this.booksService
       .getBooks()
       .subscribe((Book) => this.store.dispatch(retrievedBookList({ Book })));
+
+  }
+
+  colection() {
     
+
+    this.store.pipe(select(selectBookCollection)).subscribe(
+
+
+      (data) => {
+        if (typeof data !== 'undefined') {
+          this.books = data, console.log('this.books desde book.component data:' + JSON.stringify(data))
+        }
+
+      })
+
+
   }
- 
-  colection(){
-    //this.books$= this.store.pipe(select(selectBooks));
-    //console.log('this.books',this.books);
- 
-      this.store.pipe(select(selectBookCollection)).subscribe(
-       
-         
-        (data)=>{
-          if(typeof data !=='undefined'){
-            this.books=data,console.log('this.books desde book.component data:'+JSON.stringify( data))
-          }
-          
-        })
-       
-      
-      }
-  }
+}
  
 
 

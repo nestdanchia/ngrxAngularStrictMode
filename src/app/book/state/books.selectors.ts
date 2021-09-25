@@ -41,7 +41,7 @@ export const selectBookCollection = createSelector(
   selectCollectionState,
   (books: Book[], collection: string[] )=> {
     return collection.map((id) => books.find((book) =>  book.id === id 
-    ) ,console.log('books',books) )as Book[]
+    ) ,console.log('collection',collection) )as Book[]
    
     
    
