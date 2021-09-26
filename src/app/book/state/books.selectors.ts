@@ -8,9 +8,9 @@ export const selectBooks = createSelector(
   (state: AppState) => state.books,
   (books: Book[]) => books
 );
-
+// https://www.learmoreseekmore.com/2019/10/angular-state-management-with-ngrx.html
 export const selectCollectionState = createFeatureSelector<
-  AppState ,
+  AppState, 
 string[]
 >("collection");
 /*

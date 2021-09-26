@@ -5,8 +5,13 @@ export interface AppState {
     collection: ReadonlyArray<string>;
   }
   */
+  export interface OrdersState {
+    Id:number,
+    CustomerName:string
+}
   export interface AppState {
    
     books: Book[];
     collection:  string[];
+    orders:OrdersState
   }

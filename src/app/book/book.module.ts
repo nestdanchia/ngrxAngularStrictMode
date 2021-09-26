@@ -5,6 +5,8 @@ import { BookRoutingModule } from './book-routing.module';
 import { BookComponent } from './book.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookCollectionComponent } from './book-collection/book-collection.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../material/material.module';
 // https://stackoverflow.com/questions/66820549/angular-in-strict-mode-with-ngrx
 
 @NgModule({
@@ -15,7 +17,11 @@ import { BookCollectionComponent } from './book-collection/book-collection.compo
   ],
   imports: [
     CommonModule,
-    BookRoutingModule
+    BookRoutingModule,
+    ReactiveFormsModule,
+    MaterialModule,
+  
   ]
 })
 export class BookModule { }
+// https://codingpotions.com/angular-material
