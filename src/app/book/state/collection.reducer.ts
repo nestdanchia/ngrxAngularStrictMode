@@ -8,8 +8,10 @@ export const initialState: Array<string> = [];
  
 export const collectionReducer = createReducer(
   initialState,
-  on(removeBook, (state, { bookId }) => state.filter((id) => id !== bookId)),
-  on(addBook, (state, { bookId }) => {
+  on(removeBook, 
+    (state, { bookId }) => state.filter((id) => id !== bookId)),
+  on(addBook,
+     (state, { bookId }) => {
     console.log('bookId collectionReduce:',bookId);
     console.log('state desde collectionReducer :',state)
     if (state.indexOf(bookId) > -1) return state;

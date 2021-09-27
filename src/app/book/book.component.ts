@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 import { pipe} from 'rxjs';
 import { Book } from './model/books.model';
 import { collectionReducer } from './state/collection.reducer';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { AppState } from './state/book.state';
 // https://github.com/nestdanchia/ngrxAngularStrictMode
 // error si no se modifica store.d.ts
@@ -40,7 +40,7 @@ books$!: Observable<Book[]>
     private booksService: GoogleBooksService,
     private store: Store<AppState>
   ) {
-    this.books$ = this.store.pipe(select(selectBooks));
+    this.books$ = this.store.pipe(tap(()=>console.log('solicito books')),select(selectBooks));
     this.bookCollection$ = this.store.pipe(select(selectBookCollection));
     
   }

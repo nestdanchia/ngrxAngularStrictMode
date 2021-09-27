@@ -17,14 +17,15 @@ import { booksReducer } from './book/state/books.reducer';
 import { collectionReducer } from './book/state/collection.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-
+import { selectOrders } from './book/state/books.selectors';
 // null undefine null and undefined are only assignable to unknown, 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
+
+  BrowserModule,
     AppRoutingModule,
     FormsModule,
     MaterialModule,

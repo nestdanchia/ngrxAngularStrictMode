@@ -2,7 +2,7 @@
 
 import { createReducer, on } from "@ngrx/store";
 import { Book } from "../model/books.model";
-//import { Book } from "../model/books.model";
+
 import { retrievedBookList } from "./books.actions";
 
 
@@ -11,6 +11,9 @@ import { retrievedBookList } from "./books.actions";
 export const initialState: Array<Book> = [];
 
 export const booksReducer = createReducer(
-    initialState,
-    on(retrievedBookList, (state, { Book }) => [...Book])
-  );
+  initialState,
+  on(
+    retrievedBookList,
+    (state, { Book }) => [...Book])
+);
+

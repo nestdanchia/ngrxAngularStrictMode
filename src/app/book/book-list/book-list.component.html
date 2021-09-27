@@ -1,3 +1,4 @@
+
 <section>
 <mat-card  *ngFor="let book of books" class="example-card">
   <mat-card-header>
@@ -5,7 +6,7 @@
     <mat-card-title>{{book.volumeInfo.title}}</mat-card-title>
     
   </mat-card-header>
-  
+  <img mat-card-image src="{{book.volumeInfo.imageLinks.thumbnail}}" alt="Photo of a book">
   <mat-card-content>
    
     by {{book.volumeInfo.authors}}
