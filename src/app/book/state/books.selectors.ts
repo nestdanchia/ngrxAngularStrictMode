@@ -56,6 +56,7 @@ export const selectBookCollection = createSelector(
 // https://stackoverflow.com/questions/66820549/angular-in-strict-mode-with-ngrx
 
 */
+
 const obj=[
   {
     "kind": "books#volume",

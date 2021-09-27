@@ -12,8 +12,9 @@ Type 'Book | undefined' is not assignable to type 'Book'.
 <app-book-collection [books]="bookCollection$ | async" (remove)="onRemove($event)">
     app-book-collection
 </app-book-collection>
-
+<hr>
 <p>book works!</p>
 <h2>Books</h2>
 <app-book-list [books]="books$ | async" (add)="onAdd($event)"></app-book-list>
+
 

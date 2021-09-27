@@ -7,10 +7,12 @@
   </mat-card-header>
   
   <mat-card-content>
+   
     by {{book.volumeInfo.authors}}
+  
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button  color="primary" (click)="addi(book)">Add to Collection</button>
+  <mat-card-actions >
+    <button mat-raised-button  color="primary" (click)="addi(book)"  class="my-class">Add to Collection</button>
   </mat-card-actions>
 </mat-card>
 </section>

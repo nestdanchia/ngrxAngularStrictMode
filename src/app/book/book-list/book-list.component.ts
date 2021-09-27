@@ -24,3 +24,4 @@ export class BookListComponent implements OnInit {
 this.add.emit(data.id)
  }
 }
+// https://www.smashingmagazine.com/2018/10/news-application-with-angular-and-material-design/

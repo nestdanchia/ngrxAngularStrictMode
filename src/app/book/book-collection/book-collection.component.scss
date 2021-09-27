@@ -1,8 +1,28 @@
 .example-card {
-    max-width: 400px;
-    margin-bottom: 8px;
+  max-width: 200px;
+  margin-bottom: 8px;
+}
+.mat-card-title{
+  color:green;
+  font-size:20px
   }
-  mat-card-title{
-    color:green;
-    font-size:40px
+
+  
+  
+  section {
+      display: flex;
+      flex-direction: row;
+      flex-wrap:wrap;
+      justify-content: space-between;
+      
+    }
+    
+    .mat-card-content{
+      padding:2px !important;
+    }
+    .mat-card-actions{
+      position: absolute;
+        bottom :6%
+      
+        
     }
