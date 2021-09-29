@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { GoogleBooksService } from './service/books.service';
-import { addBook, removeBook, retrievedBookList } from './state/books.actions';
+import { addBook, loadBook, removeBook, retrievedBookList } from './state/books.actions';
 import { selectBookCollection, selectBooks } from './state/books.selectors';
 import { Observable } from 'rxjs';
 import { pipe} from 'rxjs';
 import { Book } from './model/books.model';
-import { collectionReducer } from './state/collection.reducer';
+
 import { map, tap } from 'rxjs/operators';
 import { AppState } from './state/book.state';
+
 // https://github.com/nestdanchia/ngrxAngularStrictMode
 // error si no se modifica store.d.ts
 // declare class Store<T = any> extends Observable<T> implements Observer<Action> {..]
@@ -30,6 +31,7 @@ books$!: Observable<Book[]>
   onAdd(bookId: any) {
     console.log('bokId desde book.component :',bookId)
     this.store.dispatch(addBook({ bookId }));
+   
   }
  
   onRemove(bookId: any) {
@@ -42,25 +44,29 @@ books$!: Observable<Book[]>
   ) {
     this.books$ = this.store.pipe(tap(()=>console.log('solicito books')),select(selectBooks));
     this.bookCollection$ = this.store.pipe(select(selectBookCollection));
-    
+  
   }
   ngOnInit() {
-    this.colection();
+   
+   /*esto lo hace book.effects.ts
     this.booksService
       .getBooks()
       .subscribe((Book) => this.store.dispatch(retrievedBookList({ Book })));
+      */
+      this.colection();
 
   }
 
   colection() {
     
-
+this.store.dispatch(loadBook())
     this.store.pipe(select(selectBookCollection)).subscribe(
 
 
       (data) => {
         if (typeof data !== 'undefined') {
-          this.books = data, console.log('this.books desde book.component data:' + JSON.stringify(data))
+          this.books = data
+//console.log('this.books desde book.component data:' + JSON.stringify(data))
         }
 
       })

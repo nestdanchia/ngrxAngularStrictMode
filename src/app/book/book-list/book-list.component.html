@@ -6,7 +6,7 @@
     <mat-card-title>{{book.volumeInfo.title}}</mat-card-title>
     
   </mat-card-header>
-  <img mat-card-image src="{{book.volumeInfo.imageLinks.thumbnail}}" alt="Photo of a book">
+  <img mat-card-image src="{{book.volumeInfo.imageLinks.thumbnail}}" alt="Photo of a book" >
   <mat-card-content>
    
     by {{book.volumeInfo.authors}}
@@ -16,6 +16,7 @@
     <button mat-raised-button  color="primary" (click)="addi(book)"  class="my-class">Add to Collection</button>
   </mat-card-actions>
 </mat-card>
+
 </section>
 
 

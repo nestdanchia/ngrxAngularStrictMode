@@ -8,5 +8,7 @@ export interface AppState {
 
   books: Book[];
   collection: string[];
-  orders: OrdersState[]
+  orders: OrdersState[];
+  SuccessMessage:string;
+  ErrorMessage:string;
 }

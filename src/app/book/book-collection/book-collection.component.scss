@@ -10,10 +10,13 @@
   
   
   section {
+    
+    background: rgb(239, 240, 243);
       display: flex;
       flex-direction: row;
       flex-wrap:wrap;
       justify-content: space-between;
+      align-items: center;
       
     }
     

@@ -17,7 +17,9 @@ import { booksReducer } from './book/state/books.reducer';
 import { collectionReducer } from './book/state/collection.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { selectOrders } from './book/state/books.selectors';
+import { SomeEffects } from './book/state/book.effects';
+import { EffectsModule } from '@ngrx/effects';
+
 // null undefine null and undefined are only assignable to unknown, 
 @NgModule({
   declarations: [
@@ -31,9 +33,10 @@ import { selectOrders } from './book/state/books.selectors';
     MaterialModule,
     HttpClientModule,
     BrowserAnimationsModule, 
+    EffectsModule.forRoot([SomeEffects]),
     StoreModule.forRoot({ books: booksReducer, collection: collectionReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -43,5 +46,6 @@ export class AppModule { }
 //StoreModule.forRoot({ count: counterReducer })
     
     /*
+    https://github.com/M-Hamo/NGRX-project/blob/main/src/app/products/state/product.reducer.ts
     ng generate module customers --route customers --module app.module
     */

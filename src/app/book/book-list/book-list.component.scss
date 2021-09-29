@@ -11,6 +11,7 @@
   
   
   section {
+    background: rgb(236, 193, 193);
       display: flex;
       flex-direction: row;
       flex-wrap:wrap;
@@ -24,13 +25,13 @@
      
     .mat-card-actions{
       position: absolute;
-        bottom :6%
+      bottom :2%
       
         
     }
     .my-class{
       width: 130px!important;
       height: 31px;
-      min-width: unset!important;
+      
 }
       

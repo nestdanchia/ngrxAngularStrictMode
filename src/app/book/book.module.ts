@@ -24,4 +24,7 @@ import { MaterialModule } from '../material/material.module';
   ]
 })
 export class BookModule { }
+// https://github.com/iquiroga/effects-app/blob/main/src/app/store/reducers/usuario.reducer.ts
 // https://codingpotions.com/angular-material
+// https://github.com/DeborahK/Angular-NgRx-GettingStarted
+// https://github.com/M-Hamo/NGRX-project
